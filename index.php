@@ -13,13 +13,11 @@ try {
         $bot->sendMessage($message->getChat()->getId(), 'pong!');
     });
 
-
+    $keyboard = new \TelegramBot\Api\Types\ReplyKeyboardMarkup(array(array("one", "two", "three")), true); // true for one-time keyboard
+    
 $bot->command('command', function ($message) use ($bot) {
-        $bot->sendMessage($message->getChat()->getId(), 'command');
+        $bot->sendMessage($message->getChat()->getId(), 'command', null, false, null, $keyboard);
 });
-
-$bot->__call('command', []);
-
 
 $bot->editedMessage(function ($message) use ($bot) {
         //テキストを編集（EDIT）したときに動く
