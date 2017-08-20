@@ -9,7 +9,7 @@ require_once "vendor/autoload.php";
 try {
     $bot = new \TelegramBot\Api\Client(YOUR_BOT_API_TOKEN, YOUR_BOTAN_TRACKER_API_KEY);
 
-        $bot->call("/getMe");
+        $bot->call("getMe");
 
     $bot->command('ping', function ($message) use ($bot) {
         $bot->sendMessage($message->getChat()->getId(), 'pong!');
