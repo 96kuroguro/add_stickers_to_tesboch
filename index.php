@@ -14,13 +14,10 @@ try {
     });
 
 
-
+    $bot->sendMessage($message->getChat()->getId(), var_dump($message));
+    
 $bot->command('command', function ($message) use ($bot) {
         $bot->sendMessage($message->getChat()->getId(), 'command');
-});
-
-$bot->Message(function ($message) use ($bot) {
-        $bot->sendMessage($message->getChat()->getId(), 'Message');
 });
 
 $bot->editedMessage(function ($message) use ($bot) {
