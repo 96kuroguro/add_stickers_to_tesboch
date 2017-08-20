@@ -16,7 +16,7 @@ try {
 
     
 $bot->command('getMe', function ($message) use ($bot) {
-        $bot->sendMessage($message->getChat()->getId(), var_dump($bot->call('getMe')));
+        $bot->sendMessage($message->getChat()->getId(), $bot->call('getMe')['first_name']);
 });
 
 $bot->editedMessage(function ($message) use ($bot) {
