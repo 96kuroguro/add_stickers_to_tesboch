@@ -13,6 +13,45 @@ try {
         $bot->sendMessage($message->getChat()->getId(), 'pong!');
     });
 
+
+
+$bot->command('command', function ($message) use ($bot) {
+        $bot->sendMessage($message->getChat()->getId(), 'command');
+});
+
+$bot->editedMessage(function ($message) use ($bot) {
+        $bot->sendMessage($message->getChat()->getId(), 'editedMessage');
+});
+
+$bot->callbackQuery(function ($message) use ($bot) {
+        $bot->sendMessage($message->getChat()->getId(), 'callbackQuery');
+});
+
+$bot->channelPost(function ($message) use ($bot) {
+        $bot->sendMessage($message->getChat()->getId(), 'channelPost');
+});
+
+$bot->editedChannelPost(function ($message) use ($bot) {
+        $bot->sendMessage($message->getChat()->getId(), 'editedChannelPost');
+});
+
+$bot->inlineQuery(function ($message) use ($bot) {
+        $bot->sendMessage($message->getChat()->getId(), 'inlineQuery');
+});
+
+$bot->chosenInlineResult(function ($message) use ($bot) {
+        $bot->sendMessage($message->getChat()->getId(), 'chosenInlineResult');
+});
+$bot->shippingQuery(function ($message) use ($bot) {
+        $bot->sendMessage($message->getChat()->getId(), 'shippingQuery');
+});
+$bot->preCheckoutQuery(function ($message) use ($bot) {
+        $bot->sendMessage($message->getChat()->getId(), 'preCheckoutQuery');
+});
+
+
+
+
     $bot->run();
 
 } catch (\TelegramBot\Api\Exception $e) {
