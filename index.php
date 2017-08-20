@@ -9,17 +9,14 @@ require_once "vendor/autoload.php";
 try {
     $bot = new \TelegramBot\Api\Client(YOUR_BOT_API_TOKEN, YOUR_BOTAN_TRACKER_API_KEY);
 
-        $bot->call('getMe', function ($message) use ($bot) {
-                $bot->sendMessage($message->getChat()->getId(), 'getMe');
-            });
 
     $bot->command('ping', function ($message) use ($bot) {
         $bot->sendMessage($message->getChat()->getId(), 'pong!');
     });
 
     
-$bot->command('command', function ($message) use ($bot) {
-        $bot->sendMessage($message->getChat()->getId(), 'command');
+$bot->command('getMe', function ($message) use ($bot) {
+        $bot->call('getMe');
 });
 
 $bot->editedMessage(function ($message) use ($bot) {
