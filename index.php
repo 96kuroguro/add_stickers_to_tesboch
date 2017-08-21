@@ -14,7 +14,7 @@ try {
         $bot->sendMessage($message->getChat()->getId(), 'pong!');
     });
 
-    
+
 $bot->command('getMe', function ($message) use ($bot) {
         $bot->sendMessage($message->getChat()->getId(), $bot->call('getMe')['first_name']);
 });
@@ -51,7 +51,9 @@ $bot->preCheckoutQuery(function ($message) use ($bot) {
 });
 
 
-
+$bot->on(function ($message) use ($bot) {
+        $bot->sendMessage($message->getChat()->getId(), 'on');
+    });
 
     $bot->run();
 
