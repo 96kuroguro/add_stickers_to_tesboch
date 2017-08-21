@@ -47,7 +47,8 @@ $bot->preCheckoutQuery(function ($message) use ($bot) {
         $bot->sendMessage($message->getChat()->getId(), 'preCheckoutQuery');
 });
 
-$message = TelegramBot\Api\Types\Update::getMessage();
+$message = new TelegramBot\Api\Types\Update();
+$message = $message->getMessage();
 
 $bot->on(
         function($message) use($bot){
