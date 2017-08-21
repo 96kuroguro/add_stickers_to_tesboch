@@ -14,6 +14,9 @@ try {
         $bot->sendMessage($message->getChat()->getId(), 'pong!');
     });
 
+    $bot->command(function ($message) use ($bot) {
+        $bot->sendMessage($message->getChat()->getId(), 'on');
+    });
 
 
 $bot->editedMessage(function ($message) use ($bot) {
@@ -46,14 +49,6 @@ $bot->shippingQuery(function ($message) use ($bot) {
 $bot->preCheckoutQuery(function ($message) use ($bot) {
         $bot->sendMessage($message->getChat()->getId(), 'preCheckoutQuery');
 });
-
-$message = \TelegramBot\Api\Types\Message::getChat();
-
-$bot->on(
-        function($message) use($bot){
-        $bot->sendMessage($message->getChat()->getId(), 'on');
-        }
-);
 
     $bot->run();
 
