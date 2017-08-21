@@ -15,9 +15,6 @@ try {
     });
 
 
-$bot->command($message, function ($message) use ($bot) {
-        $bot->sendMessage($message->getChat()->getId(), $bot->call('getMe')['first_name']);
-});
 
 $bot->editedMessage(function ($message) use ($bot) {
         //テキストを編集（EDIT）したときに動く
@@ -50,7 +47,11 @@ $bot->preCheckoutQuery(function ($message) use ($bot) {
         $bot->sendMessage($message->getChat()->getId(), 'preCheckoutQuery');
 });
 
-
+$bot->on(
+        function ($message) use ($bot) {
+                $bot->sendMessage($message->getChat()->getId(), 'on');
+        }        
+);
 
     $bot->run();
 
