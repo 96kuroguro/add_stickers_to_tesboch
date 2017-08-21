@@ -47,7 +47,7 @@ $bot->preCheckoutQuery(function ($message) use ($bot) {
         $bot->sendMessage($message->getChat()->getId(), 'preCheckoutQuery');
 });
 
-$message = new \TelegramBot\Api\Types\Message();
+$message = \TelegramBot\Api\Types\Message::getChat();
 
 $bot->on(
         function($message) use($bot){
