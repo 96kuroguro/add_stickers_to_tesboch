@@ -61,7 +61,7 @@ $bot->on(
                 $action->invokeArgs($message);
 
                 return false;
-        };
+        }
 );
 
     $bot->run();
