@@ -15,7 +15,7 @@ try {
     });
 
 
-$bot->command('/a', function ($message) use ($bot) {
+$bot->command($message, function ($message) use ($bot) {
         $bot->sendMessage($message->getChat()->getId(), $bot->call('getMe')['first_name']);
 });
 
