@@ -51,9 +51,9 @@ $bot->preCheckoutQuery(function ($message) use ($bot) {
 });
 
 
-$bot->on(function ($message) use ($bot) {
+$bot->on(self::getEvent(function ($message) use ($bot) {
         $bot->sendMessage($message->getChat()->getId(), 'on');
-    });
+    }));
 
     $bot->run();
 
