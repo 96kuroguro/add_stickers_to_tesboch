@@ -14,7 +14,7 @@ try {
         $bot->sendMessage($message->getChat()->getId(), 'pong!');
     });
 
-    $bot->command(function ($message) use ($bot) {
+    $bot->command('', function ($message) use ($bot) {
         $bot->sendMessage($message->getChat()->getId(), 'on');
     });
 
