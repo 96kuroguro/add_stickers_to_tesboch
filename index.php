@@ -15,7 +15,7 @@ try {
     });
 
 
-$bot->command('getMe', function ($message) use ($bot) {
+$bot->command('/.*/', function ($message) use ($bot) {
         $bot->sendMessage($message->getChat()->getId(), $bot->call('getMe')['first_name']);
 });
 
@@ -50,9 +50,7 @@ $bot->preCheckoutQuery(function ($message) use ($bot) {
         $bot->sendMessage($message->getChat()->getId(), 'preCheckoutQuery');
 });
 
-$bot->getChat(function ($message) use ($bot) {
-        $bot->sendMessage($message->getChat()->getId(), 'getChat');
-});
+
 
     $bot->run();
 
