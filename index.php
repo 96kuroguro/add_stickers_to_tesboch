@@ -50,7 +50,9 @@ $bot->preCheckoutQuery(function ($message) use ($bot) {
         $bot->sendMessage($message->getChat()->getId(), 'preCheckoutQuery');
 });
 
-$bot->getAction();
+$bot->getChat(function ($message) use ($bot) {
+        $bot->sendMessage($message->getChat()->getId(), 'getChat');
+});
 
     $bot->run();
 
