@@ -48,7 +48,6 @@ $bot->preCheckoutQuery(function ($message) use ($bot) {
 });
 
 $message = new \TelegramBot\Api\Types\Update();
-$message = $message->getMessage();
 
 $bot->on(
         function($message) use($bot){
