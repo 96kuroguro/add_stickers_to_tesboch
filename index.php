@@ -47,21 +47,12 @@ $bot->preCheckoutQuery(function ($message) use ($bot) {
         $bot->sendMessage($message->getChat()->getId(), 'preCheckoutQuery');
 });
 
+$message = TelegramBot\Api\Types\Update::getMessage();
+
 $bot->on(
-        // function ($update) use ($bot) {
-        //         $message = $update->getMessage();
-        //         if (!$message) {
-        //                 return true;
-        //         }
-
-                $action = new ReflectionFunction(function ($message) use ($bot) {
-                        $bot->sendMessage($message->getChat()->getId(), 'on');
-                });
-
-                $action->invokeArgs($message);
-
-        //         return false;
-        // }
+        function($message) use($bot){
+        $bot->sendMessage($message->getChat()->getId(), 'on');
+        }
 );
 
     $bot->run();
