@@ -2,6 +2,6 @@
     "name": "96kuroguro/add_stickers_to_tesboch",
     "description": "てすぼっちにステッカーを登録するボット",
     "require": {
-        "telegram-bot/api": "^2.3"
+        "irazasyed/telegram-bot-sdk": "^2.0"
     }
 }
